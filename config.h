@@ -60,13 +60,11 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *xmodmapcmd[]  = { "xmodmap", "~/.Xmodmap", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY4,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY1|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY1|ShiftMask,             XK_o,      spawn,          {.v = xmodmapcmd } },
 	{ MODKEY4,                       XK_b,      togglebar,      {0} },
 	{ MODKEY4,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY4,                       XK_k,      focusstack,     {.i = -1 } },
@@ -88,6 +86,7 @@ static const Key keys[] = {
 	{ MODKEY4,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY4|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY4|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY1,                       XK_9,      view,           {.ui = 1 << 8} }, // Can always jump to tag 9 to reset xmodmap
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
