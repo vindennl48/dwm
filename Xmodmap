@@ -1,0 +1,5 @@
+!make sure to put this in .xinitrc BEFORE exec dwm
+![[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+clear mod4
+remove control = Control_R
+add mod4 = Control_R
