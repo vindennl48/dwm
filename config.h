@@ -73,7 +73,7 @@ static const Key keys[] = {
 	{ MODKEY4,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY4,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY4,                       XK_Return, zoom,           {0} },
-	{ MODKEY4,                       XK_Tab,    view,           {0} },
+	// { MODKEY4,                       XK_Tab,    view,           {0} },
 	{ MODKEY1|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY4,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY4,                       XK_f,      setlayout,      {.v = &layouts[1]} },
